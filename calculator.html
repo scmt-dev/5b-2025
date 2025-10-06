@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Calculator</h1>
+        A:
+        <input type="number" id="a">
+        B:
+        <input type="number" id="b" onchange="add()">
+        <button id="add" onclick="add()">Add</button>
+        <button id="subtract" onclick="subTrack()">Subtract</button>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+        <p id="result">-</p>
+    </div>
+    <script>
+        
+        const a = document.getElementById('a').value;
+        const b = document.getElementById('b').value;
+        function add() {
+            console.log(a, b)
+            if(!a) {
+                alert('Please enter a number');
+                return;
+            }
+            if(!b) {
+                alert('Please enter b number');
+                return;
+            }
+            const total = Number(a) + Number(b);
+            const result = document.getElementById('result');
+            result.innerText = total;
+            console.log(total)
+        }
+        function subTrack() {
+            if(!a) {
+                alert('Please enter a number');
+                return;
+            }
+            if(!b) {
+                alert('Please enter b number');
+                return;
+            }
+            const total = Number(a) - Number(b);
+            console.log(total)
+        }
+
+    </script>
+</body>
+</html>
