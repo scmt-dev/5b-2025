@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <style>
+      body ,#body{
+        background-color: #000;
+        color: #fff;
+      }
+      #body{
+        position: relative;
+        background-color: wheat;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+      }
+      #snake {
+        position: absolute;
+        font-size: 2em;
+      }
+      #frog {
+        position: absolute;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Snake Game</h1>
+      <span id="score">Score: 0</span>
+    </div>
+    <div id="body">
+      <span id="frog">🐸</span>
+      <span id="snake">🐍</span>
+    </div>
+
+    <script src="snak-game.js"></script>
+  </body>
+</html>
