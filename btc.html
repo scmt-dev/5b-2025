@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC</title>
+</head>
+<body>
+    
+    <div>
+        <h1>BTC Price</h1>
+        <h3 id="priceUsd">0 USD</h3>
+        <h4 id="priceLAK">0 LAK</h4>
+        <h4 id="priceBTH">0 BTH</h4>
+    </div>
+
+    <script>
+        const API_URL = 'https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT';
+
+        async function getPrice() {
+            const response = await fetch(API_URL, {
+                method: 'GET'
+            });
+            const data = await response.json();
+            const priceUsd = document.getElementById('priceUsd');
+            const priceLAK = document.getElementById('priceLAK');
+            const priceBTH = document.getElementById('priceBTH');
+            const priceY = document.getElementById('priceY');
+            console.log(data);
+            const usd = Number(data.price);
+            priceUsd.innerHTML = `${data.price} USD`;
+            priceLAK.innerHTML = (usd * 21535).toLocaleString() + ' LAK';
+            priceBTH.innerHTML = (usd * 21535 / 658.94).toLocaleString() + ' BTH';
+        }
+
+        getPrice();
+
+    </script>
+
+</body>
+</html>
